@@ -1,46 +1,50 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:ocr_kita_1/view/signup.dart';
+// ignore_for_file: use_full_hex_values_for_flutter_colors
 
-void main() => runApp(Login());
+import 'package:flutter/material.dart';
+import 'package:ocr_kita_1/view/register.dart';
+
+void main() => runApp(const Login());
 
 class Login extends StatelessWidget {
+  const Login({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff00B533),
+      backgroundColor: const Color(0xfff00B533),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               width: 250,
               color: Colors.white,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: "Email", border: InputBorder.none),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               width: 250,
               color: Colors.white,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: "Password", border: InputBorder.none),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             MaterialButton(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               minWidth: 250,
               color: Colors.white,
-              child: Text(
+              child: const Text(
                 "Login",
                 style: TextStyle(
                     color: Colors.blue,
@@ -50,13 +54,13 @@ class Login extends StatelessWidget {
               onPressed: () {},
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 "Not a member? Signup now",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => SignUp()));
+                    context, MaterialPageRoute(builder: (context) => RegisterPage()));
               },
             )
           ],
