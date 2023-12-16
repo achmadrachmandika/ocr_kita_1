@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocr_kita_1/view/register.dart';
 
-void main() => runApp(const Login());
+// void main() => runApp(const Login());
 
 class Login extends StatelessWidget {
   const Login({super.key});

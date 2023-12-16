@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ocr_kita_1/view/login.dart';
 import 'package:ocr_kita_1/view/register.dart';
+import 'package:ocr_kita_1/view/saat-mau-scan.dart';
+import 'package:ocr_kita_1/view/tampilan-scan-ktp-galeri.dart';
+import 'package:ocr_kita_1/view/tampilan-scan-ktp-kamera.dart';
 
 void main() => runApp(const MyApp());
 
@@ -113,6 +117,10 @@ class _HomePageState extends State<HomePage> {
                         ElevatedButton(
                           onPressed: () {
                             // Tambahkan logika untuk tombol Login
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => TampilanScanKtpKamera()),
+                            );
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
