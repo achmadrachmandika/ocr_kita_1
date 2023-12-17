@@ -33,8 +33,15 @@ dependencies:
   google_sign_in: ^5.2.1
   # Other dependencies...
   cupertino_icons: ^1.0.2
-  font_awesome_flutter: ^9.2.0
+<<<<<<< HEAD
   google_fonts: ^6.1.0
+=======
+  font_awesome_flutter: ^9.2.0
+<<<<<<< HEAD
+  google_fonts: ^6.1.0
+=======
+>>>>>>> 487b7724c65547bdc40984e26cf806269ed699cf
+>>>>>>> 56c7974c01a7f63ee7c967d0f909e1bef0903c84
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,10 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
 
+<<<<<<< HEAD
+=======
+// void main() => runApp(const Login());
+>>>>>>> 56c7974c01a7f63ee7c967d0f909e1bef0903c84
 
 void main() => runApp(const LoginPage());
 

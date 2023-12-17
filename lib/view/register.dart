@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-void main() => runApp(const RegisterPage());
+// void main() => runApp(const RegisterPage());
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
