@@ -1,5 +1,6 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 void main() => runApp(const RegisterPage());
@@ -70,23 +71,40 @@ class RegisterPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      const TextField(
-                        style: TextStyle(color: Colors.white),
+                      const SizedBox(height: 18),
+                      TextField(
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           labelText: 'Email atau No.Telp',
-                          labelStyle: TextStyle(color: Colors.white),
+                          labelStyle: const TextStyle(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      const TextField(
-                        style: TextStyle(color: Colors.white),
+                      const SizedBox(height: 18),
+                      TextField(
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           labelText: 'Username',
-                          labelStyle: TextStyle(color: Colors.white),
+                          labelStyle: const TextStyle(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 16),
+
+                      const SizedBox(height: 18),
                       TextField(
                         obscureText: true,
                         style: const TextStyle(color: Colors.white),
@@ -99,19 +117,74 @@ class RegisterPage extends StatelessWidget {
                             icon: const Icon(Icons.visibility),
                           ),
                           labelStyle: const TextStyle(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      // Tombol "Back to Login"
+                      const SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 16), // Adjust the bottom padding as needed
+                        child: ElevatedButton(
+                          onPressed: _handleGoogleSignIn,
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.white,
+                            ),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/google_logo.png',
+                                  height: 24,
+                                  width: 24,
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              const Text(
+                                'Register with Google',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
                       Row(
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              // Tambahkan logika untuk tombol Login
+                              Navigator.pop(context);
                             },
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
                                 const Color.fromRGBO(0, 134, 49, 1),
+                              ),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
                               ),
                             ),
                             child: const Text(
@@ -135,6 +208,11 @@ class RegisterPage extends StatelessWidget {
                               backgroundColor: MaterialStateProperty.all<Color>(
                                 const Color.fromRGBO(0, 134, 49, 1),
                               ),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
                             ),
                             child: const Text(
                               'Register',
@@ -146,33 +224,7 @@ class RegisterPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 16),
-                      // "Register with Google" button
-                      ElevatedButton(
-                        onPressed: _handleGoogleSignIn,
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.white,
-                          ),
-                        ),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.google,
-                              color: Color.fromRGBO(66, 133, 244, 1),
-                            ),
-                            SizedBox(width: 8),
-                            Text(
-                              'Register with Google',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+
                     ],
                   ),
                 ),
